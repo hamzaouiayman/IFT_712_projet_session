@@ -1,0 +1,14 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {section}{\numberline {2}Les donn\IeC {\'e}es}{3}
+\contentsline {section}{\numberline {3}Les m\IeC {\'e}thodes utilis\IeC {\'e}es}{4}
+\contentsline {subsection}{\numberline {3.1}TF-IDF}{4}
+\contentsline {subsection}{\numberline {3.2}Methode 2}{4}
+\contentsline {subsection}{\numberline {3.3}Methode 3}{4}
+\contentsline {subsection}{\numberline {3.4}Methode 4}{4}
+\contentsline {subsection}{\numberline {3.5}Methode 5}{4}
+\contentsline {subsection}{\numberline {3.6}Methode 6}{4}
+\contentsline {section}{\numberline {4}Les r\IeC {\'e}sultats}{5}
+\contentsline {section}{\numberline {5}Conclusion}{5}
+\contentsline {section}{\numberline {A}Choix du design}{6}
+\contentsline {section}{\numberline {B}Utilisation de Git}{6}
