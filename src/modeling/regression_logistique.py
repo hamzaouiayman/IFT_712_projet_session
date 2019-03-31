@@ -15,12 +15,18 @@ class regression_logistique:
 
 
 
-    def train(self, X_train, t_train):
+   def train(self, X_train, t_train, grid_serach):
 
-		self.model.fit(X_train, t_train)
+		if (grid_serach == True):
+			self.clf.fit(X_train, t_train)
+		else:
+			self.model.fit(X_train, t_train)
 
-    def predict(self, X_test):
+	def predict(self, X_test, grid_serach):
 
-		y_predict = self.model.predict(X_test)
+		if (grid_serach == True):
+			y_predict = self.clf.predict(X_test)
+		else:
+			y_predict = self.model.predict(X_test)
 
 		return y_predict
