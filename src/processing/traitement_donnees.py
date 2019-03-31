@@ -11,6 +11,7 @@ class TraitementDonnees:
 		self.LE = LabelEncoder()
 
 	def tfidf_transform(self):
+		#transformer les données en utilisant la methode tfidf
 		
 		#tokenization 
 		self.df_train['ingredients']  = self.df_train['ingredients'].apply(lambda x : ' '.join([y.replace(' ','') for y in x]))
@@ -23,6 +24,13 @@ class TraitementDonnees:
 		return X_train,X_test
 
 	def label_train_transform(self):
+		#transformer le vecteur cible 
+
 		y_train  = self.df_train['cuisine']
 		y = self.LE.fit_transform(y_train)
 		return y
+
+	def label_test_inverseTransform(self,labels):
+		y_test = self.LE.inverse_transform(labels)
+		return y_test
+
