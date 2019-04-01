@@ -22,10 +22,6 @@ def main():
 	X_train,X_test = td.tfidf_transform()
 	
 	y_train = td.label_train_transform()
-    
-	#model = SVM.SVM()
-	#model.train(X_train,y_train, False)
-	#y_pred = model.predict(X_test, False)
 
 	print("entrainement")
 	model = RF.RandomForest()
