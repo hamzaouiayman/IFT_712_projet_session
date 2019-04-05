@@ -3,30 +3,38 @@ from sklearn.linear_model import LogisticRegression
 
 class regression_logistique:
     
-    def  __init__(self):
-        
-		self.model = LogisticRegression()
+    def  __init__(self,grid_search):
+
+        self.grid_search = grid_search
+        self.model = LogisticRegression()
         self.parameters = {'max_iter':[50, 200], 'solver':['newton-cg', 'sag', 'lbfgs'], 'multi_class':['multinomial'],
-                           'tol':[1e-3, 1e-5], 'C':[1, 10], 'fit_intercept':[True]}        
+        						'tol':[1e-3, 1e-5], 'C':[1, 10], 'fit_intercept':[True]}
         self.CV = 5
-		self.clf = GridSearchCV(self.model, self.parameters,
-									n_jobs = 4,
-									cv = self.CV)
+        self.clf = GridSearchCV(self.model, self.parameters,
+        							n_jobs = 4,
+        							cv = self.CV)
 
+    def train(self, X_train, t_train):
 
+    	if (self.grid_search == True):
+    		self.clf.fit(X_train, t_train)
+    	else:
+    		self.model.fit(X_train, t_train)
 
-   def train(self, X_train, t_train, grid_serach):
+    def predict(self, X_test):
 
-		if (grid_serach == True):
-			self.clf.fit(X_train, t_train)
-		else:
-			self.model.fit(X_train, t_train)
+    	if (self.grid_search == True):
+    		y_predict = self.clf.predict(X_test)
+    	else:
+    		y_predict = self.model.predict(X_test)
 
-	def predict(self, X_test, grid_serach):
+    	return y_predict
 
-		if (grid_serach == True):
-			y_predict = self.clf.predict(X_test)
-		else:
-			y_predict = self.model.predict(X_test)
+    def score(self, X_train, t_train):
 
-		return y_predict
+    	if (self.grid_search == True):
+    		score = self.clf.score(X_train, t_train)
+    	else:
+    		score = self.model.score(X_train, t_train)
+
+    	return score

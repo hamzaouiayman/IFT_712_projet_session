@@ -5,8 +5,9 @@ from sklearn.multiclass import OneVsRestClassifier
 
 class SVM:
 
-	def  __init__(self):
+	def  __init__(self,grid_search):
 
+		self.grid_search = grid_search
 		self.classifier = SVC(C=100, # penalty parameter
 	 			 kernel='rbf', # kernel type, rbf working fine here
 	 			 degree=3, # default value
@@ -24,19 +25,27 @@ class SVM:
 									n_jobs = 4,
 									cv = self.CV)
 
+	def train(self, X_train, t_train):
 
-	def train(self, X_train, t_train, grid_serach):
-
-		if (grid_serach == True):
+		if (self.grid_search == True):
 			self.clf.fit(X_train, t_train)
 		else:
 			self.model.fit(X_train, t_train)
 
-	def predict(self, X_test, grid_serach):
+	def predict(self, X_test):
 
-		if (grid_serach == True):
+		if (self.grid_search == True):
 			y_predict = self.clf.predict(X_test)
 		else:
 			y_predict = self.model.predict(X_test)
 
 		return y_predict
+
+	def score(self, X_train, t_train):
+		
+		if (self.grid_search == True):
+			score = self.clf.score(X_train, t_train)
+		else:
+			score = self.model.score(X_train, t_train)
+
+		return score
