@@ -24,11 +24,11 @@ def main():
 	X_train,X_test = td.tfidf_transform()
 	
 	y_train = td.label_train_transform()
-	grid_search = False
+	grid_search = True
 
 	#choix du model d'apprentissage
 	print("entrainement")
-	typeModel = "randomForest"
+	typeModel = "svm"
 	if (typeModel == 'knn') : 
 		model = KNN.KNN(grid_search)
 	elif (typeModel == 'mlp'):

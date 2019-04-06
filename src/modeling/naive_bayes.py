@@ -1,5 +1,5 @@
 from sklearn.naive_bayes import GaussianNB
-#from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import GridSearchCV
 
 class naive_bayes:
     
@@ -16,24 +16,24 @@ class naive_bayes:
     def train(self, X_train, t_train):
 
     	if (self.grid_search == True):
-    		self.clf.fit(X_train, t_train)
+    		self.clf.fit(X_train.toarray(), t_train)
     	else:
-    		self.model.fit(X_train, t_train)
+    		self.model.fit(X_train.toarray(), t_train)
 
     def predict(self, X_test):
 
     	if (self.grid_search == True):
-    		y_predict = self.clf.predict(X_test)
+    		y_predict = self.clf.predict(X_test.toarray())
     	else:
-    		y_predict = self.model.predict(X_test)
+    		y_predict = self.model.predict(X_test.toarray())
 
     	return y_predict
 
     def score(self, X_train, t_train):
 
     	if (self.grid_search == True):
-    		score = self.clf.score(X_train, t_train)
+    		score = self.clf.score(X_train.toarray(), t_train)
     	else:
-    		score = self.model.score(X_train, t_train)
+    		score = self.model.score(X_train.toarray(), t_train)
 
     	return score

@@ -1,5 +1,5 @@
 from sklearn.linear_model import LogisticRegression
-#from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import GridSearchCV
 
 class regression_logistique:
     
@@ -7,8 +7,8 @@ class regression_logistique:
 
         self.grid_search = grid_search
         self.model = LogisticRegression()
-        self.parameters = {'max_iter':[50, 200], 'solver':['newton-cg', 'sag', 'lbfgs'], 'multi_class':['multinomial'],
-        						'tol':[1e-3, 1e-5], 'C':[1, 10], 'fit_intercept':[True]}
+        self.parameters = { 'solver':['sag'], 'multi_class':['multinomial'],'class_weight':['balanced’'],
+        						'tol':[1e-7], 'C':[1, 10, 50], 'fit_intercept':[True]}
         self.CV = 5
         self.clf = GridSearchCV(self.model, self.parameters,
         							n_jobs = 4,
