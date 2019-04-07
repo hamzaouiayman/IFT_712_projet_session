@@ -20,10 +20,11 @@ class SVM:
 							  verbose=False  # print the logs
 							  )
 		self.model = OneVsRestClassifier(self.classifier)
-		self.parameters = {'kernel': ['rbf', 'linear'], 'C': [1, 10]}
+		self.parameters = {'kernel': ['poly', 'rbf', 'sigmoid'], 'C': [1, 10,50,100],'tol':[0.001,0.00001],'degree':[3,5,8],'gamma':[1]}
 		self.CV = 5
 		self.clf = GridSearchCV(self.classifier, self.parameters,
 								n_jobs=6,
+								verbose=2,
 								cv=self.CV)
 
 	def train(self, X_train, t_train):
