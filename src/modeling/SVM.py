@@ -45,6 +45,7 @@ class SVM:
 	def score(self, X_train, t_train):
 
 		if (self.grid_search == True):
+			print('meilleures parameteres :', self.clf.best_params_)
 			score = self.clf.score(X_train, t_train)
 		else:
 			score = self.model.score(X_train, t_train)
@@ -54,4 +55,4 @@ class SVM:
 	def print_cv_results(self):
 
 		CV_result = pd.DataFrame(self.clf.cv_results_)
-		CV_result.to_csv('../../Data/CVresults/SVM_CV_result.csv')
+		CV_result.to_csv('../Data/CVresults/SVM_CV_result.csv')

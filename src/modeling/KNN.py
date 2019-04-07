@@ -27,6 +27,7 @@ class KNN:
 	def predict(self, X_test):
 
 		if (self.grid_search == True):
+			print('meilleures parameteres :', self.clf.best_params_)
 			y_predict = self.clf.predict(X_test)
 		else:
 			y_predict = self.model.predict(X_test)

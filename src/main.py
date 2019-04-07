@@ -1,6 +1,7 @@
 import pandas as pd
 import json
 import sys
+
 from pandas.io.json import json_normalize
 
 import processing.traitement_donnees as TD
@@ -9,12 +10,12 @@ import modeling.SVM as SVM
 import modeling.KNN as KNN
 import modeling.RandomForest as RF
 import modeling.regression_logistique as RL
-import modeling.naive_bayes as NB
+import modeling.AdaBoost as AB
 
 def main():
 
 	if len(sys.argv) < 2:
-		usage = "\n\n\t type_model: svm, knn, mlp, randomForest, regressionLogistique\
+		usage = "\n\n\t type_model: svm, knn, adaBoost, mlp, randomForest, regressionLogistique\
 	        \n\t Grid_Search: 0:False 1:True\n"
 		print(usage)
 		return
@@ -43,8 +44,8 @@ def main():
 		model = KNN.KNN(grid_search)
 	elif (typeModel == 'mlp'):
 		model = MLP.MLP(grid_search)
-	elif (typeModel == 'naiveBayes'):
-		model = NB.naive_bayes(grid_search)
+	elif (typeModel == 'adaBoost'):
+		model = AB.AdaBoost(grid_search)
 	elif (typeModel == 'randomForest'):
 		model = RF.RandomForest(grid_search)
 	elif (typeModel == 'regressionLogistique'):

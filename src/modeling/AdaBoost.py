@@ -1,17 +1,15 @@
-from sklearn.naive_bayes import GaussianNB
-from sklearn.model_selection import GridSearchCV
+from sklearn.ensemble import AdaBoostClassifier
+from sklearn.linear_model import LogisticRegression
 
-class naive_bayes:
+class AdaBoost:
     
     def  __init__(self,grid_search):
         
         self.grid_search = grid_search
-        self.model = GaussianNB()
-        self.parameters = {'var_smoothing':[1e-08, 1e-10]}
-        self.CV = 5
-        self.clf = GridSearchCV(self.model, self.parameters,
-        							n_jobs = 4,
-        							cv = self.CV)
+        self.model = LogisticRegression(C=5, class_weight=None, fit_intercept=True, multi_class='multinomial',solver='sag',tol=1e-05)
+        self.estimators = 5
+        self.clf = AdaBoostClassifier(self.model,algorithm="SAMME",
+                         				n_estimators=200)
 
     def train(self, X_train, t_train):
 
