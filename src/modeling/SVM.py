@@ -1,3 +1,4 @@
+import pandas as pd
 from sklearn.svm import SVC
 from sklearn.model_selection import GridSearchCV
 from sklearn.multiclass import OneVsRestClassifier
@@ -49,3 +50,8 @@ class SVM:
 			score = self.model.score(X_train, t_train)
 
 		return score
+
+	def print_cv_results(self):
+
+		CV_result = pd.DataFrame(self.clf.cv_results_)
+		CV_result.to_csv('../../Data/CVresults/SVM_CV_result.csv')

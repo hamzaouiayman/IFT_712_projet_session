@@ -1,3 +1,4 @@
+import pandas as pd
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import GridSearchCV
 
@@ -9,7 +10,7 @@ class KNN:
 		self.model = KNeighborsClassifier(
 							n_neighbors=5,
 							weights = 'distance')
-		self.parameters = {'n_neighbors':[5, 7, 9, 10, 20], 'weights':['distance','uniform']}
+		self.parameters = {'n_neighbors':[5], 'weights':['distance']}#,'uniform'
 		self.CV = 5
 		self.clf = GridSearchCV(self.model, self.parameters,
 									n_jobs = 4,
@@ -39,3 +40,8 @@ class KNN:
 			score = self.model.score(X_train, t_train)
 
 		return score
+
+	def print_cv_results(self):
+
+			CV_result = pd.DataFrame(self.clf.cv_results_)
+			CV_result.to_csv('../Data/CVresults/KNN_CV_result.csv')

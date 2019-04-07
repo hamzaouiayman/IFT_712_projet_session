@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+import sys
 from pandas.io.json import json_normalize
 
 import processing.traitement_donnees as TD
@@ -11,6 +12,17 @@ import modeling.regression_logistique as RL
 import modeling.naive_bayes as NB
 
 def main():
+
+	if len(sys.argv) < 2:
+		usage = "\n\n\t type_model: svm, knn, mlp, randomForest, regressionLogistique\
+	        \n\t Grid_Search: 0:False 1:True\n"
+		print(usage)
+		return
+
+	typeModel = sys.argv[1]
+	grid_search = int(sys.argv[2])
+
+	grid_search = True if (grid_search == 1) else False
 
 	print("lecture des donnees")
 	file_train = json.load(open("../Data/Raw/train.json"))
@@ -24,12 +36,10 @@ def main():
 	X_train,X_test = td.tfidf_transform()
 	
 	y_train = td.label_train_transform()
-	grid_search = True
 
 	#choix du model d'apprentissage
 	print("entrainement")
-	typeModel = "svm"
-	if (typeModel == 'knn') : 
+	if (typeModel == 'knn') :
 		model = KNN.KNN(grid_search)
 	elif (typeModel == 'mlp'):
 		model = MLP.MLP(grid_search)
@@ -45,6 +55,9 @@ def main():
 	#entrainement
 	model.train(X_train,y_train)
 	print("train accuracy",model.score(X_train,y_train))
+
+	if (grid_search==True):
+		model.print_cv_results()
 
 	#prediction des données de test
 	print("prediction")
