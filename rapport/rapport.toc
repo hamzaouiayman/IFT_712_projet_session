@@ -1,14 +1,16 @@
 \select@language {french}
-\contentsline {section}{\numberline {1}Introduction}{3}
-\contentsline {section}{\numberline {2}Les donn\IeC {\'e}es}{3}
-\contentsline {section}{\numberline {3}Les m\IeC {\'e}thodes utilis\IeC {\'e}es}{4}
-\contentsline {subsection}{\numberline {3.1}TF-IDF}{4}
-\contentsline {subsection}{\numberline {3.2}Methode 2}{4}
-\contentsline {subsection}{\numberline {3.3}Methode 3}{4}
-\contentsline {subsection}{\numberline {3.4}Methode 4}{4}
-\contentsline {subsection}{\numberline {3.5}Methode 5}{4}
-\contentsline {subsection}{\numberline {3.6}Methode 6}{4}
-\contentsline {section}{\numberline {4}Les r\IeC {\'e}sultats}{5}
-\contentsline {section}{\numberline {5}Conclusion}{5}
-\contentsline {section}{\numberline {A}Choix du design}{6}
-\contentsline {section}{\numberline {B}Utilisation de Git}{6}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {section}{\numberline {2}Les donn\IeC {\'e}es}{3}{section.2}
+\contentsline {section}{\numberline {3}Traitement des donn\IeC {\'e}es}{4}{section.3}
+\contentsline {section}{\numberline {4}Les m\IeC {\'e}thodes utilis\IeC {\'e}es}{4}{section.4}
+\contentsline {subsection}{\numberline {4.1}Les K plus proches voisins}{4}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}R\IeC {\'e}seaux de neuronnes}{5}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Machine \IeC {\`a} Vecteur de Support}{5}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}For\IeC {\^e}t al\IeC {\'e}atoire}{5}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Naive Bayes}{6}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Regression logistique}{6}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Adaboost}{6}{subsection.4.7}
+\contentsline {section}{\numberline {5}Les r\IeC {\'e}sultats}{7}{section.5}
+\contentsline {section}{\numberline {6}Conclusion}{7}{section.6}
+\contentsline {section}{\numberline {A}Choix du design}{8}{appendix.A}
+\contentsline {section}{\numberline {B}Utilisation de Git}{8}{appendix.B}
