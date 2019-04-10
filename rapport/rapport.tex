@@ -124,7 +124,7 @@ La méthode Adaboost\footnote{\url{https://scikit-learn.org/stable/modules/gener
 \end{wrapfigure}
 Nous avons donc soumis ces 7 techniques sur \textit{Kaggle} et nous avons obtenus pour 5 d'entre elles des scores supérieurs à 70\%. Les différences de score pour ces 5 méthodes ne sont pas très élévés. Cependant pour certaines, le temps de calcul est très grand et pour d'autres, beaucoup plus court.
 
-La méthode de la forêt aléatoire à obtenu un score de 72,3\% en utilisant grid search. Pour la technique du perceptron multi couches, nous avons obtenu un score de 74,6\% tandis que la méthode de la régression logistique nous montre un score de 78,2\% et celle des machines à vecteur de support un score de 80\%.
+La méthode de la forêt aléatoire à obtenu un score de 72,3\% en utilisant grid search. Pour la technique du perceptron multi couches, nous avons obtenu un score de 74,6\%, celle des k plus proches voisins est arrivée à 75\%. Les deux meilleurs techniques sont la méthode de la régression logistique qui nous montre un score de 78,2\% et celle des machines à vecteur de support un score de 80\%.
 
 Les méthodes pour lesquels nous avons eus de mauvais résultat sont Adaboost et naive Bayes. Nous obtenons un score de 19,3\% pour Adaboost et 33,8\% avec naive Bayes. Nous avons commencé par implémenter naive Bayes et ce mauvais résultat nous à amené à essayer une autre méthode dans l'espoir d'avoir de meilleurs résultats. C'est ainsi que nous avons implémenté une septième méthodes et au vu des résultats obtenus avec celle-ci, nous en concluons que ce sont deux méthodes qui ne sont pas adaptés aux données fournies. Les erreurs obtenues sur ces modèles sont probablement dû à la trop forte proportion de recettes italienne et indienne car nous pouvons voir sur les données de adaboost que la totalité des prévisions sont des recettes italiennes.
 
@@ -145,6 +145,8 @@ Ainsi, nous avons mis en place une partie \emph{Data} contenant les données ré
 
 
 \section{Utilisation de Git}
-Nous avons mis en place un github\footnote{\url{https://github.com/hamzaouiayman/IFT_712_projet_session.git}} afin de répartir le travail et indiquer le travail restant à faire. Pour cela, nous avons crée des \textit{issues}\footnote{Tâches à effectuer avant la fin du projet} au fur et à mesure de l'avancée du projet.
+Nous avons mis en place un github\footnote{\url{https://github.com/hamzaouiayman/IFT_712_projet_session.git}} afin de répartir le travail et indiquer le travail restant à faire. Pour cela, nous avons crée des \textit{issues}\footnote{Tâches à effectuer avant la fin du projet} au fur et à mesure de l'avancée du projet. 
+
+Pour la répartition du travail, nous avons par exemple séparé d'un côté la préparation du git et du rapport et d'un autre côté la génération des données. L'avantage de git est que nous avons pu travailler chacun de notre côté sur une partie du programme et nous avons rassembler tous nos travaux à la fin.
 
 \end{document}

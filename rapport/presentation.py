@@ -4,6 +4,8 @@
 Created on Sat Mar 23 16:31:24 2019
 
 @author: julien
+
+This page is used to create diagrams for the presentation
 """
 
 import numpy as np # linear algebra
@@ -28,7 +30,7 @@ print("Nombre maximum d'ingrédients dans un plat: ",train_df['ingredients'].str
 print("Nombre minimum d'ingrédients dans un plat: ",train_df['ingredients'].str.len().min())
 print("Nombre de catégories de cuisine: {}".format(len(train_df.cuisine.unique())))
 print (train_df.cuisine.unique())
-# Obtenir un histogramme de la repartition du nombre d'ingrédients par recette
+# Get an histogram of the number of ingredient by recipe
 plt.hist(train_df['ingredients'].str.len(),bins=max(train_df['ingredients'].str.len()),edgecolor='b')
 plt.gcf().set_size_inches(14,7)
 plt.title('Ingredients dans la distribution des plats')
@@ -41,8 +43,7 @@ plt.gcf().set_size_inches(12,8)
 plt.title('Cuisine Distribution',size=15)
 """
 
-# Obtenir des histogrammes des ingrédients les plus consommés 
-# en fonction des cuisines. 
+# Get histogram of the ingredients most consumed per cuisine
 train_df['for ngrams']=train_df['seperated_ingredients'].str.replace(',',' ')
 f,ax=plt.subplots(2,2,figsize=(20,20))
 def ingre_cusine(cuisine):
