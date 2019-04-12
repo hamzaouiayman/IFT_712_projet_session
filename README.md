@@ -1,8 +1,9 @@
 # IFT_712_projet_session
-# Ayman Hamzaoui & Julien Delaunay
+# Ayman Hamzaoui 18 131 996 & Julien Delaunay 18 155 167
 # Projet de fin de session en technique d'apprentissage
+# Lien vers le GitHub : https://github.com/hamzaouiayman/IFT_712_projet_session.git
 
-# Sujet : What's cooking ?
+# Sujet : What's cooking ? Use recipe ingredients to categorize the cuisine
 
 # Le dossier Data comprend 3 sous-dossier :
 # CVResult => Les meilleurs hyper-paramètres pour chaque méthodes.
