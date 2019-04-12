@@ -9,16 +9,7 @@ class SVM:
 	def __init__(self, grid_search):
 
 		self.grid_search = grid_search
-		self.classifier = SVC(C=100,  # penalty parameter
-							  kernel='rbf',  # kernel type, rbf working fine here
-							  degree=3,  # default value
-							  gamma=1,  # kernel coefficient
-							  coef0=1,  # change to 1 from default value of 0.0
-							  tol=0.001,  # stopping criterion tolerance
-							  probability=False,  # no need to enable probability estimates
-							  class_weight=None,  # all classes are treated equally
-							  verbose=False  # print the logs
-							  )
+		self.classifier = SVC()
 		self.model = OneVsRestClassifier(self.classifier)
 		self.parameters = {'kernel': ['poly', 'rbf', 'sigmoid'], 'C': [1, 10,50,100],'tol':[0.001,0.00001],'degree':[3,5,8],'gamma':[1]}
 		self.CV = 5
